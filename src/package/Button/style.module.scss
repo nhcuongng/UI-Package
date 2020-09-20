@@ -1,7 +1,60 @@
+// Varibale
+$primary-color: rgb(0, 110, 255);
+$primary-color-hover:  rgb(0, 89, 206);
+
+$secondary-color: rgb(172, 172, 172);
+$secondary-color-hover: rgb(128, 127, 127);
+
+$success-color: rgb(35, 170, 1);
+$success-color-hover: rgb(31, 148, 2);
+
+$info-color: rgb(0, 180, 156);
+$info-color-hover: rgb(1, 150, 130);
+
+$warning-color: rgb(212, 216, 0);
+$warning-color-hover: rgb(182, 185, 0);
+
+$danger-color: rgb(231, 0, 0);
+$danger-color-hover: rgb(189, 0, 0);
+
+
+// Mixins
+@mixin buttonBase($color, $hoverColor){
+  width: 140px;
+  height: 60px;
+  border: none;
+  background-color: $color;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  &:hover {
+    background-color: $hoverColor;
+  }
+}
+
+// Generate
 .primary {
-  background-color: #5c6ac4;
+  @include buttonBase($primary-color, $primary-color-hover);
 }
 
-.scssPhaiVietTheoDangCamelCaseNhe {
-
+.secondary {
+  @include buttonBase($secondary-color, $secondary-color-hover);
 }
+
+.success {
+  @include buttonBase($success-color, $success-color-hover);
+}
+
+.info {
+  @include buttonBase($info-color, $info-color-hover);
+}
+
+.warning {
+  @include buttonBase($warning-color, $warning-color-hover);
+}
+
+.danger {
+  @include buttonBase($danger-color, $danger-color-hover);
+}
+
+
