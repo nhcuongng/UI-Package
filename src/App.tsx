@@ -5,7 +5,7 @@ import { Button } from './package/Button';
 class App extends React.PureComponent {
 	render() {
 		return (
-			<Button>Primary</Button>
+			<Button color='info'>Primary</Button>
 		);
 	}
 }

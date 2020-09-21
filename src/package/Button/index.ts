@@ -12,7 +12,7 @@ export const Button: React.FC<TProp> = (props) => {
 
   const className = classNames(
     rest.className,
-    { [styles[color]]: color }
+    styles[color]
   )
 
   const button = React.createElement('button', {
