@@ -5,7 +5,11 @@ import { Button } from './package/Button';
 class App extends React.PureComponent {
 	render() {
 		return (
-			<Button>Primary</Button>
+			<div className='container'>
+				<Button color='success' size='sm'>Success</Button> {' '}
+				<Button color='warning'>Warning</Button> {' '}
+				<Button color='danger' size='lg'>Danger</Button>
+			</div>
 		);
 	}
 }

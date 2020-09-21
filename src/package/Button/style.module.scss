@@ -1,4 +1,4 @@
-// Varibale
+/* Variable */
 $primary-color: rgb(0, 110, 255);
 $primary-color-hover:  rgb(0, 89, 206);
 
@@ -18,21 +18,32 @@ $danger-color: rgb(231, 0, 0);
 $danger-color-hover: rgb(189, 0, 0);
 
 
-// Mixins
+/* Mixin */
 @mixin buttonBase($color, $hoverColor){
-  width: 140px;
-  height: 60px;
+  width: 100px;
+  height: 40px;
   border: none;
   background-color: $color;
   font-size: 16px;
   font-weight: 700;
   color: white;
+  cursor: pointer;
   &:hover {
     background-color: $hoverColor;
   }
+  &:focus {
+    outline: none;
+  }
 }
 
-// Generate
+/* Set size for button */
+@mixin button-size($width, $height, $font-size ) {
+  width: $width;
+  height: $height;
+  font-size: $font-size;
+}
+
+/* Color */
 .primary {
   @include buttonBase($primary-color, $primary-color-hover);
 }
@@ -57,4 +68,15 @@ $danger-color-hover: rgb(189, 0, 0);
   @include buttonBase($danger-color, $danger-color-hover);
 }
 
+.sm {
+  @include button-size(80px, 30px, 14px);
+}
+
+.md {
+  @include button-size(100px, 40px, 16px);
+}
+
+.lg {
+  @include button-size(120px, 50px, 18px);
+}
 
