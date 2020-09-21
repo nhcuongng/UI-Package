@@ -4,17 +4,15 @@ import styles from './style.module.scss';
 
 import { TProp } from './type';
 
-export const Button: React.FC<TProp> = ({ primary, secondary, success, info, warning, danger, ...rest }) => {
+export const Button: React.FC<TProp> = (props) => {
+  const {
+    color = 'primary',
+    ...rest
+  } = props;
 
   const className = classNames(
     rest.className,
-    { [styles.primary]: primary,
-      [styles.secondary]: secondary,
-      [styles.success]: success,
-      [styles.info]: info,
-      [styles.warning]: warning,
-      [styles.danger]: danger,
-    }
+    { [styles[color]]: color }
   )
 
   const button = React.createElement('button', {

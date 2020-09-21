@@ -1,8 +1,5 @@
-export type TProp ={
-  primary?: boolean,
-  secondary?: boolean,
-  success?: boolean,
-  info?: boolean,
-  warning?: boolean,
-  danger?: boolean,
+export type TBtnColor = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger';
+
+export type TProp = {
+  color?: TBtnColor
 } & React.HTMLAttributes<HTMLButtonElement>
