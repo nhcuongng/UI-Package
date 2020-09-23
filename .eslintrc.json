@@ -1,0 +1,14 @@
+{
+	"extends": ["airbnb-typescript"],
+	// "plugins": ["prettier"],
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"rules": {
+		// "prettier/prettier": ["error"]
+		"import/prefer-default-export": "off",
+		"@typescript-eslint/indent": "off",
+		"no-tabs": "off",
+		"react/jsx-indent": "off"
+	}
+}
