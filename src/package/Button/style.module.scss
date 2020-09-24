@@ -1,49 +1,7 @@
-/* Variable */
-$primary-color: rgb(0, 110, 255);
-$primary-color-hover:  rgb(0, 89, 206);
+@import "../style/mixins/buttonMixins";
+@import "../style/variables/buttonVariables";
 
-$secondary-color: rgb(172, 172, 172);
-$secondary-color-hover: rgb(128, 127, 127);
-
-$success-color: rgb(35, 170, 1);
-$success-color-hover: rgb(31, 148, 2);
-
-$info-color: rgb(0, 180, 156);
-$info-color-hover: rgb(1, 150, 130);
-
-$warning-color: rgb(212, 216, 0);
-$warning-color-hover: rgb(182, 185, 0);
-
-$danger-color: rgb(231, 0, 0);
-$danger-color-hover: rgb(189, 0, 0);
-
-
-/* Mixin */
-@mixin buttonBase($color, $hoverColor){
-  width: 100px;
-  height: 40px;
-  border: none;
-  background-color: $color;
-  font-size: 16px;
-  font-weight: 700;
-  color: white;
-  cursor: pointer;
-  &:hover {
-    background-color: $hoverColor;
-  }
-  &:focus {
-    outline: none;
-  }
-}
-
-/* Set size for button */
-@mixin button-size($width, $height, $font-size ) {
-  width: $width;
-  height: $height;
-  font-size: $font-size;
-}
-
-/* Color */
+/** Colors ( Sau scale len se su dung vong lap */
 .primary {
   @include buttonBase($primary-color, $primary-color-hover);
 }
@@ -68,6 +26,7 @@ $danger-color-hover: rgb(189, 0, 0);
   @include buttonBase($danger-color, $danger-color-hover);
 }
 
+/** Sizes ( Sau scale len se su dung vong lap */
 .sm {
   @include button-size(80px, 30px, 14px);
 }
@@ -80,3 +39,48 @@ $danger-color-hover: rgb(189, 0, 0);
   @include button-size(120px, 50px, 18px);
 }
 
+/** State viet duoi dang btn-outline-{color}, su dung vong lap sau */
+.btn-outline-primary {
+	@include buttonOutline($primary-color, $primary-color-hover);
+}
+
+.btn-outline-secondary {
+	@include buttonOutline($secondary-color, $secondary-color-hover);
+}
+
+.btn-outline-success {
+	@include buttonOutline($success-color, $success-color-hover);
+}
+
+.btn-outline-info {
+	@include buttonOutline($info-color, $info-color-hover);
+}
+
+.btn-outline-warning {
+	@include buttonOutline($warning-color, $warning-color-hover);
+}
+
+.btn-outline-danger {
+	@include buttonOutline($danger-color, $danger-color-hover);
+}
+
+/** State */
+.btn-active {
+	cursor: pointer;
+	pointer-events: inherit;
+}
+
+.btn-disabled {
+	cursor: not-allowed;
+	pointer-events: none;
+	color: #ffffff;
+	background-color: #c9c7c7;
+	opacity: 0.7;
+
+}
+
+/** Block */
+.btn-block {
+	display: block;
+	width: 100%;
+}

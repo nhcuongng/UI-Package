@@ -1,0 +1,58 @@
+/* Screen size */
+$XS: 480px;
+$SM: 768px;
+$MD: 1024px;
+$XL: 1170px;
+
+/*
+* Responsive element follow by screen size
+*
+* @param $screen-size: screen size
+*
+* @example
+* .foo {
+*   font-size: 10px;
+*   @include responsive(MD) {
+*       font-size : 12px;
+*   }
+*   @include responsive(XL) {
+*       font-size : 14px;
+*   }
+*/
+@mixin responsive($screen-size) {
+    @if $screen-size == XS {
+        @media only screen and (min-width: $XS) {
+            @content;
+        }
+    } @else if $screen-size == SM {
+        @media only screen and (min-width: $SM) {
+            @content;
+        }
+    } @else if $screen-size == MD {
+        @media only screen and (min-width: $MD) {
+            @content;
+        }
+    } @else if $screen-size == XL {
+        @media only screen and (min-width: $XL) {
+            @content;
+        }
+    }
+}
+
+
+/*
+* Set size for a element
+*
+* @param $width: width property
+* @param $height: height property
+*
+* @example
+* .foo {
+*    @include box(10px, 5px);
+* }
+*/
+@mixin box($width, $height) {
+	width: $width;
+	height: $height;
+}
+
